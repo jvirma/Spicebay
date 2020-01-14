@@ -1,0 +1,62 @@
+{{# if ordersProducts }}
+<div class="row ml-1 mr-1 ">
+    <div class="card-header col-sm-12  mt-4 font-weight-bold border"><h3>My Orders</h3></div>
+    <ul class="list-group col-sm-12 padding-0">
+        {{# each ordersProducts }}
+        <li class="list-group-item ">
+            <div class="col-sm-6 d-inline-block">
+                <strong>OrderID</strong>
+            </div>
+            <div class="col-sm-6 float-right">
+                {{this.orderinfo.ID}}
+            </div>
+            <div class="col-sm-6 d-inline-block">
+                <strong>PaymentID</strong>
+            </div>
+            <div class="col-sm-6 float-right">
+                {{this.orderinfo.paymentID}}
+            </div>
+            <div class="col-sm-6 d-inline-block">
+                <strong>Total price</strong>
+            </div>
+            <div class="col-sm-6 float-right">
+                ${{this.orderinfo.amount}}
+            </div>
+            <div class="col-sm-6 d-inline-block">
+                <strong>Date</strong>
+            </div>
+            <div class="col-sm-6 float-right">
+                {{ this.orderinfo.createdAt }}
+            </div>
+            <div class="col-sm-12 mt-2">
+                <strong>Products</strong>
+            </div>
+
+            {{# each this.products }}
+            <div class="col-sm-12">
+                {{this.productName}}, {{this.amount}} g * ${{this.cost}}
+            </div>
+            {{/each}}
+
+
+
+
+
+        </li>
+        {{/each}}
+    </ul>
+</div>
+
+{{ else }}
+<div class="row ml-1 mr-1 ">
+    <div class="card-header col-sm-12  mt-4 font-weight-bold border"><h3>Shopping Cart</h3></div>
+    <ul class="list-group col-sm-12 padding-0">
+        <li class="list-group-item">
+            <div class="col-sm-12 d-inline-block padding-0">
+                <strong>No orders</strong>
+            </div>
+        </li>
+    </ul>
+</div>
+{{/if}}
+

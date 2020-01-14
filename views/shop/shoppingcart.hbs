@@ -1,0 +1,58 @@
+
+{{# if products }}
+<div class="row ml-1 mr-1 ">
+    <div class="card-header col-sm-12  mt-4 font-weight-bold border"><h3>Shopping Cart</h3></div>
+    <ul class="list-group col-sm-12 padding-0">
+        {{# each products }}
+        <li class="list-group-item">
+            <div class="col-sm-12 d-inline-block padding-0">
+                <strong>{{ this.item.productName }}</strong>
+            </div>
+
+            <form class="form-inline mt-2 col-sm-12 padding-0 mb-4">
+                <div class="form-group">
+                    <span>$</span>
+                    <span class="label label-success mr-1" id="unitprice{{this.item.ID}}">{{ this.price }}</span>
+                    <span> *</span>
+                    <input type="number" min="1" class="form-control ml-2 mr-2 userInput" data-value="{{this.item.ID}},{{ this.price }}" value="{{this.qty}}" id="quantity{{this.item.ID}}" name="quantity{{this.item.ID}}">
+                </div>
+                <span>grams</span>
+            </form>
+    <h5 style="display:inline;">$</h5>
+    <h5 class="unitprices"id="unitpriceText{{this.item.ID}}" data-value="{{this.item.ID}}" style="display:inline;">{{ this.totalprice }}</h5>
+
+    <div class="btn-group dropleft float-right">
+        <button class="btn btn-danger dropleft  float-right" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-trash-alt"></i><span class="caret"></span></button>
+
+        <div class="dropdown-menu">
+            <a class="dropdown-item" href="/remove/{{this.item.ID}}">Remove this product</a>
+        </div>
+    </div>
+
+
+
+</li>
+        {{/each}}
+    </ul>
+    <div class="col-sm-12 padding-0 mt-2">
+        <li class="list-group-item ">
+            <h3 id ="totalSum" class="d-inline-block">Total price ${{ totalPrice }}</h3>
+            <a class="btn btn-success float-right" href="/checkout">Checkout</a>
+        </li>
+    </div>
+</div>
+
+{{ else }}
+<div class="row ml-1 mr-1 ">
+    <div class="card-header col-sm-12  mt-4 font-weight-bold border"><h3>Shopping Cart</h3></div>
+    <ul class="list-group col-sm-12 padding-0">
+        <li class="list-group-item">
+            <div class="col-sm-12 d-inline-block padding-0">
+                <strong>No items in shopping cart</strong>
+            </div>
+        </li>
+    </ul>
+</div>
+{{/if}}
+
+

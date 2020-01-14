@@ -1,0 +1,42 @@
+<div class="row justify-content-center  mr-1 ml-1 padding-0">
+
+    <div class="card-header col-sm-12  mt-4 font-weight-bold shadow border padd"><h3>Update User Information</h3></div>
+    <form action="/user/update" method="post" class="col-sm-12 padding-0">
+        <ul class="list-group col-sm-12 padding-0">
+
+            <li class="list-group-item">
+                <div class="col-sm-6 d-inline-block">
+                    <strong>E-mail</strong>
+                </div>
+                <div class="col-sm-6 float-right ">
+                    <input type="text" id="email" name="email" class="form-control form-control-sm" value="{{data.email}}">
+                </div>
+            </li>
+            <li class="list-group-item ">
+                <div class="col-sm-6 d-inline-block">
+                    <strong>First name</strong>
+                </div>
+                <div class="col-sm-6 float-right">
+                    <input type="text" id="firstName" name="firstName" class="form-control form-control-sm" value="{{data.firstName}}">
+                </div>
+            </li>
+            <li class="list-group-item ">
+                <div class="col-sm-6 d-inline-block">
+                    <strong>Last name</strong>
+                </div>
+                <div class="col-sm-6 float-right">
+                    <input type="text" id="lastName" name="lastName" class="form-control form-control-sm" value="{{data.lastName}}">
+                </div>
+            </li>
+        </ul>
+
+        <input type="hidden" name="_csrf" value="{{ csrfToken }}">
+
+
+        <div class="col-sm-12 padding-0 mt-2">
+            <a class="btn btn-danger float-right" href="/user/profile">Cancel</a>
+            <button type="submit" class="btn btn-success float-right">Save Information</button>
+        </div>
+    </form>
+
+</div>

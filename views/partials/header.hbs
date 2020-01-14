@@ -1,0 +1,51 @@
+
+<nav class="navbar navbar-expand-md navbar-light bg-dark shadow-lg">
+    <a class="navbar-brand" href="/"><h2 class="" style="color:red;font-family: 'Mansalva';font-size:60px; margin-left:60px;margin-bottom:-20px;margin-top:-10px;">SPICEBAY</h2><span class="text-light" style="margin-left:80px;font-style: italic;font-size:16px;"><strong>by Curry's Retail & Wholesale</strong></span> </a>
+    <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars" style="color:#fff; font-size:28px;"></i>
+    </button>
+
+    <div class="navbar-collapse collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto text-dark">
+            <li class="nav-item">
+                <a class="nav-link text-light" href="../shoppingcart">
+                    <h5>
+                        <i class="fas fa-shopping-cart "></i> Shopping Cart
+                        <span class="badge rounded-circle badge-danger" id="cartTotalQty">{{session.cart.itemsQty}}</span>
+                    </h5>
+                </a>
+            </li>
+            
+            {{#if login}}
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <h5 class="div-inline"><i class="fas fa-user"></i> Account</h5>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="../user/profile"><i class="fas fa-user-circle"></i> User Information</a>
+                    <a class="dropdown-item" href="../user/myorders"><i class="fas fa-shipping-fast"></i> My Orders</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="../user/logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                </div>
+            </li>
+            {{else}}
+            <li class="nav-item text-light">
+                <h5><a class="nav-link text-light" href="../user/signup"><i class="fas fa-user-plus"></i> Sign Up</a></h5>
+            </li>
+            <li class="nav-item text-light">
+                <h5><a class="nav-link text-light" href="../user/signin"><i class="fas fa-sign-in-alt"></i> Sign In</a></h5>
+            </li>
+            {{/if}}
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-light" href="#" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false"><h5 class="mr-2 div-inline">Language</h5><span class="flag-icon flag-icon-us bg-light"></span></a>
+                <div class="dropdown-menu dropdown-menu-right " aria-labelledby="dropdown">
+                    <a class="btn dropdown-item disabled"><span class="flag-icon flag-icon-fi"> </span>  Finnish (coming soon)</a>
+                    <a class="btn dropdown-item disabled"><span class="flag-icon flag-icon-in"> </span>  Hindi (coming soon)</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+
