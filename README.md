@@ -31,7 +31,7 @@ Spicebay webshop (Node.js, Express.js, Passport.js, MySQL)
 #### Result
 <p align="center">
 <b>Desktop Screen</b><br><br>
-<img width="80%" height="auto" src="https://i.gyazo.com/aec57f7f20d94ebb6eeb3cbeb5c5878a.jpg"/>
+<img width="100%" height="auto" src="https://i.gyazo.com/aec57f7f20d94ebb6eeb3cbeb5c5878a.jpg"/>
 </p>
 
 <p align="center">
